@@ -1,0 +1,5 @@
+classpath=../Liquibase_Drivers/postgresql-42.2.19.jar
+url=jdbc:postgresql://localhost:5432/survey
+username=postgres 
+password=techtask
+driver=org.postgresql.Driver

@@ -1,0 +1,21 @@
+<ng-container *ngIf=!isReady>
+    <div>
+        Loading...
+    </div>
+</ng-container>
+
+<div [hidden]="!isReady">
+    <mat-list>
+        <mat-list-item *ngFor="let question of questions">
+            <p matLine class="has-text-weight-bold">{{question.qText}}</p>
+            <span matLine>
+                <mat-radio-group>
+                    <mat-radio-button value="true" (change)='radioChecked($event, question.id)'>True</mat-radio-button>
+                    <mat-radio-button value="false" (change)='radioChecked($event, question.id)'>False</mat-radio-button>
+                </mat-radio-group>
+            </span>
+        </mat-list-item>
+    </mat-list>
+
+    <button mat-raised-button [disabled]="allQuestionsAnswered()" color="primary" (click)="submitAnswers()">Submit</button>
+</div>
